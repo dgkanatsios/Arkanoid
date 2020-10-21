@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
             case GameState.Start:
                 if (InputTaken())
                 {
-                    statusText.text = string.Format("Lives: {0}  Score: {1}", Lives, Score);
+                    statusText.text = string.Format("Lives: {0} Score: {1}", Lives, Score);
                     CurrentGameState = GameState.Playing;
                     Ball.StartBall();
                 }
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
                 {
                     Restart();
                     Ball.StartBall();
-                    statusText.text = string.Format("Lives: {0}  Score: {1}", Lives, Score);
+                    statusText.text = string.Format("Lives: {0} Score: {1}", Lives, Score);
                     CurrentGameState = GameState.Playing;
                 }
                 break;
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
                 if (InputTaken())
                 {
                     Ball.StartBall();
-                    statusText.text = string.Format("Lives: {0}  Score: {1}", Lives, Score);
+                    statusText.text = string.Format("Lives: {0} Score: {1}", Lives, Score);
                     CurrentGameState = GameState.Playing;
                 }
                 break;
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
                 {
                     Restart();
                     Ball.StartBall();
-                    statusText.text = string.Format("Lives: {0}  Score: {1}", Lives, Score);
+                    statusText.text = string.Format("Lives: {0} Score: {1}", Lives, Score);
                     CurrentGameState = GameState.Playing;
                 }
                 break;
@@ -88,12 +88,12 @@ public class GameManager : MonoBehaviour
 
         if(Lives == 0)
         {
-            statusText.text = "Lost all lives. Tap to play again";
+            statusText.text = "Tap to play again";
             CurrentGameState = GameState.LostAllLives;
         }
         else
         {
-            statusText.text = "Lost a life. Tap to continue";
+            statusText.text = "Tap to continue";
             CurrentGameState = GameState.LostALife;
         }
         Ball.StopBall();
